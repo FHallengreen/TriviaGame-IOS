@@ -14,6 +14,7 @@
 		E6EE0FCB2B2F11200010D982 /* TriviaGameIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EE0FCA2B2F11200010D982 /* TriviaGameIOSTests.swift */; };
 		E6EE0FD52B2F11200010D982 /* TriviaGameIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EE0FD42B2F11200010D982 /* TriviaGameIOSUITests.swift */; };
 		E6EE0FD72B2F11200010D982 /* TriviaGameIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EE0FD62B2F11200010D982 /* TriviaGameIOSUITestsLaunchTests.swift */; };
+		E6EE0FE52B2F13BC0010D982 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EE0FE42B2F13BC0010D982 /* PrimaryButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		E6EE0FD02B2F11200010D982 /* TriviaGameIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriviaGameIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6EE0FD42B2F11200010D982 /* TriviaGameIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaGameIOSUITests.swift; sourceTree = "<group>"; };
 		E6EE0FD62B2F11200010D982 /* TriviaGameIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaGameIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E6EE0FE42B2F13BC0010D982 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				E6EE0FB92B2F111E0010D982 /* TriviaGameIOSApp.swift */,
-				E6EE0FBB2B2F111E0010D982 /* ContentView.swift */,
+				E6EE0FE62B2F15110010D982 /* Views */,
+				E6EE0FE32B2F139F0010D982 /* Components */,
 				E6EE0FBD2B2F11200010D982 /* Assets.xcassets */,
 				E6EE0FBF2B2F11200010D982 /* Preview Content */,
 			);
@@ -125,6 +128,22 @@
 				E6EE0FD62B2F11200010D982 /* TriviaGameIOSUITestsLaunchTests.swift */,
 			);
 			path = TriviaGameIOSUITests;
+			sourceTree = "<group>";
+		};
+		E6EE0FE32B2F139F0010D982 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E6EE0FE42B2F13BC0010D982 /* PrimaryButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E6EE0FE62B2F15110010D982 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E6EE0FBB2B2F111E0010D982 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6EE0FE52B2F13BC0010D982 /* PrimaryButton.swift in Sources */,
 				E6EE0FBC2B2F111E0010D982 /* ContentView.swift in Sources */,
 				E6EE0FBA2B2F111E0010D982 /* TriviaGameIOSApp.swift in Sources */,
 			);
