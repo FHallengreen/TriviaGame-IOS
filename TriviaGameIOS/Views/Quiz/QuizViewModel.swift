@@ -12,7 +12,8 @@ class QuizViewModel: ObservableObject {
     private var quizQuestions: [QuizQuestion] = []
     @Published var currentQuestionIndex = 0
     @Published var quizSize = 0
-
+    @Published var numberOfCorrectAnswers = 0
+    
     func setQuizQuestions(_ questions: [QuizQuestion]) {
         self.quizQuestions = questions
         self.currentQuestionIndex = currentQuestionIndex
@@ -38,7 +39,9 @@ class QuizViewModel: ObservableObject {
         guard let currentQuestion = currentQuestion else { return }
 
         let isCorrect = answer == currentQuestion.correctAnswer
+        if isCorrect {
+            numberOfCorrectAnswers += 1
+        }
         quizState = .answerSelected(isCorrect: isCorrect, selectedAnswer: answer, correctAnswer: currentQuestion.correctAnswer)
-
     }
 }

@@ -13,7 +13,6 @@ struct SelectOptionsScreen: View {
     
     var body: some View {
         
-        
         switch viewModel.quizState {
         case .loading:
             ProgressView("Loading...")
@@ -30,62 +29,75 @@ struct SelectOptionsScreen: View {
         default:
             quizOptionsForm
         }
-        
     }
+
     
     var quizOptionsForm: some View {
         VStack{
-            ZStack {
-                Form {
-                    Section(header: Text("Category")) {
-                        Picker("Select Category:", selection: $viewModel.selectedCategory) {
-                            ForEach(Category.allCases, id: \.self) { category in
-                                Text(category.displayName).tag(category)
-                            }
+            Form {
+                SectionView(title: "Category", content: {
+                    Picker("Select Category:", selection: $viewModel.selectedCategory) {
+                        ForEach(Category.allCases, id: \.self) { category in
+                            Text(category.displayName).tag(category)
                         }
                     }
-                    .foregroundColor(Color("AccentColor"))
-                    .font(.headline)
-                    
-                    Section(header: Text("Number of Questions")) {
-                        Picker("Select Number of Questions:", selection: $viewModel.selectedNumberOfQuestions) {
-                            ForEach(Questions.allCases, id: \.self) { questions in
-                                Text("\(questions.rawValue)").tag(questions)
-                            }
+                })
+                
+                SectionView(title: "Number of Questions", content: {
+                    Picker("Select Number of Questions:", selection: $viewModel.selectedNumberOfQuestions) {
+                        ForEach(Questions.allCases, id: \.self) { questions in
+                            Text("\(questions.rawValue)").tag(questions)
                         }
-                        .pickerStyle(SegmentedPickerStyle())
-                        
-                    } .foregroundColor(Color("AccentColor"))
-                        .font(.headline)
-                    
-                    Section(header: Text("Difficulty")) {
-                        Picker("Select Difficulty", selection: $viewModel.selectedDifficulty) {
-                            ForEach(Difficulty.allCases, id: \.self) { difficulty in
-                                Text(difficulty.rawValue).tag(difficulty)
-                            }
-                        }
-                        .pickerStyle(SegmentedPickerStyle())
-                        
                     }
-                    .foregroundColor(Color("AccentColor"))
-                    .font(.headline)
-                }
-                .frame(
-                    maxWidth: .infinity,
-                    maxHeight: .infinity
-                )
-                .background(
-                    .white
-                )
-                .navigationBarTitle("Select Options", displayMode: .inline)
+                    .pickerStyle(SegmentedPickerStyle())
+                })
+                
+                SectionView(title: "Difficulty", content: {
+                    Picker("Select Difficulty", selection: $viewModel.selectedDifficulty) {
+                        ForEach(Difficulty.allCases, id: \.self) { difficulty in
+                            Text(difficulty.rawValue).tag(difficulty)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    
+                })
             }
-            Button("Submit") {
+            PrimaryButton(text: "Submit", action: {
                 viewModel.submitQuizRequest()
-            }.font(.title2)
+            })
+            .padding(.top, 20)
+            
+
         }
+        .background(Color(.systemGroupedBackground))
+        .navigationBarTitle("Select Options", displayMode: .inline)
     }
+    
 }
 
+
+
+struct SectionView<Content: View>: View {
+    let title: String
+    let content: Content
+    
+    init(title: String, @ViewBuilder content: () -> Content) {
+        self.title = title
+        self.content = content()
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(title)
+                .font(.headline)
+                .foregroundColor(Color("AccentColor"))
+            content
+        }
+        .padding(.vertical)
+
+    }
+    
+}
 
 
 #Preview {

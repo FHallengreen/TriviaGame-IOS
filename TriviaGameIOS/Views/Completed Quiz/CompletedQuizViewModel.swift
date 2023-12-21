@@ -9,5 +9,9 @@ import Foundation
 
 class CompletedQuizViewModel: ObservableObject {
     
-    
+    @Published var correctAnswers: Int
+
+       init(correctAnswers: Int) {
+           self.correctAnswers = correctAnswers
+       }
 }

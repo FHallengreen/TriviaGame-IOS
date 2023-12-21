@@ -25,7 +25,7 @@
 		E6EE0FCB2B2F11200010D982 /* TriviaGameIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EE0FCA2B2F11200010D982 /* TriviaGameIOSTests.swift */; };
 		E6EE0FD52B2F11200010D982 /* TriviaGameIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EE0FD42B2F11200010D982 /* TriviaGameIOSUITests.swift */; };
 		E6EE0FD72B2F11200010D982 /* TriviaGameIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EE0FD62B2F11200010D982 /* TriviaGameIOSUITestsLaunchTests.swift */; };
-		E6EE0FE52B2F13BC0010D982 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EE0FE42B2F13BC0010D982 /* PrimaryButton.swift */; };
+		E6EE0FE52B2F13BC0010D982 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EE0FE42B2F13BC0010D982 /* Buttons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,7 @@
 		E6EE0FD02B2F11200010D982 /* TriviaGameIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriviaGameIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6EE0FD42B2F11200010D982 /* TriviaGameIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaGameIOSUITests.swift; sourceTree = "<group>"; };
 		E6EE0FD62B2F11200010D982 /* TriviaGameIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaGameIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		E6EE0FE42B2F13BC0010D982 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		E6EE0FE42B2F13BC0010D982 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,7 +202,7 @@
 		E6EE0FE32B2F139F0010D982 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E6EE0FE42B2F13BC0010D982 /* PrimaryButton.swift */,
+				E6EE0FE42B2F13BC0010D982 /* Buttons.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -349,7 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6EE0FE52B2F13BC0010D982 /* PrimaryButton.swift in Sources */,
+				E6EE0FE52B2F13BC0010D982 /* Buttons.swift in Sources */,
 				E68F529B2B2F23F6007F2D02 /* SelectOptionsScreen.swift in Sources */,
 				E62FBA112B2F59B600B78C19 /* QuizApiService.swift in Sources */,
 				E6DB2ED82B33136F006B3C40 /* QuizViewModel.swift in Sources */,
