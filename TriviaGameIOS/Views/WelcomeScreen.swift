@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct WelcomeScreen: View {
     var body: some View {
         NavigationView {
                 VStack(
@@ -39,7 +39,7 @@ struct ContentView: View {
 
                 
                     NavigationLink(
-                        destination: SelectOptionsView()
+                        destination: SelectOptionsScreen()
                     ) {
                         PrimaryButton(text:"Start new quiz")
                     }
@@ -59,5 +59,5 @@ struct ContentView: View {
     }
 
 #Preview {
-    ContentView()
+    WelcomeScreen()
 }

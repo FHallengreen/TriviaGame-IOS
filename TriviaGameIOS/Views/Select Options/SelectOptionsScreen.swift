@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SelectOptionsView: View {
+struct SelectOptionsScreen: View {
     @StateObject private var viewModel = SelectOptionsViewModel()
     @StateObject private var quizViewModel = QuizViewModel()
     
@@ -19,10 +19,10 @@ struct SelectOptionsView: View {
             ProgressView("Loading...")
             
         case .quizLoaded(let questions):
-                        QuizScreen(viewModel: quizViewModel)
-                            .onAppear {
-                                quizViewModel.setQuizQuestions(questions)
-                            }
+            QuizScreen(viewModel: quizViewModel)
+                .onAppear {
+                    quizViewModel.setQuizQuestions(questions)
+                }
             
         case .error(let message):
             Text("Error: \(message)")
@@ -89,5 +89,5 @@ struct SelectOptionsView: View {
 
 
 #Preview {
-    SelectOptionsView()
+    SelectOptionsScreen()
 }

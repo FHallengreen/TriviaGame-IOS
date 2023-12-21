@@ -13,15 +13,12 @@ class SelectOptionsViewModel: ObservableObject {
         @Published var selectedNumberOfQuestions: Questions = .five
         @Published var selectedDifficulty: Difficulty = .easy
         @Published var quizQuestions: [QuizQuestion] = []
-        @Published var isLoading = false
-        @Published var errorMessage: String?
+    @Published var quizState: QuizState = .idle
 
         private let apiService = QuizApiService()
 
         func submitQuizRequest() {
-            isLoading = true
-            errorMessage = nil
-
+           quizState = .loading
             Task {
                 do {
                     let response = try await apiService.getQuiz(
@@ -29,14 +26,14 @@ class SelectOptionsViewModel: ObservableObject {
                         categoryId: selectedCategory.rawValue,
                         difficulty: selectedDifficulty.rawValue
                     )
+                    
                     DispatchQueue.main.async {
                         self.quizQuestions = response.results
-                        self.isLoading = false
+                        self.quizState = .quizLoaded(self.quizQuestions)
                     }
                 } catch {
                     DispatchQueue.main.async {
-                        self.errorMessage = error.localizedDescription
-                        self.isLoading = false
+                        self.quizState = .error(error.localizedDescription)
                     }
                 }
             }

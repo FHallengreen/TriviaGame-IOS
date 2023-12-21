@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CompletedQuizView: View {
+struct CompletedQuizScreen: View {
     @ObservedObject var viewModel: CompletedQuizViewModel
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
